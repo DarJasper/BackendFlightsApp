@@ -1,0 +1,53 @@
+﻿@model IEnumerable<FlightsReservationApp.Core.Models.Tickets>
+
+@{
+    ViewData["Title"] = "Details";
+    var user = ViewData["User"] as IdentityUser;
+}
+
+<div>
+    <a asp-controller="Flights" asp-action="Index">< Back to Flights</a>
+    <p></p>
+</div>
+
+
+<h1>All tickets for: @user.Email</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Flight.FlightNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Seat)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OrderId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Flight.FlightNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Seat.Id)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
