@@ -1,2 +1,0 @@
-﻿INSERT INTO [Airplanes] VALUES ('a4a5013c-29ac-4b57-a865-8c4847a59364', 'Boeing 777', 350, 35, 10);
-INSERT INTO [Airplanes] VALUES ('b67a6550-42e1-410f-a98d-21941c5945ac', 'Airbus A319', 126, 21, 6);
