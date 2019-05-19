@@ -18,11 +18,10 @@ namespace FlightsReservationApp.Core.Repositories
         }
 
         //Get Seats for a Flight
-        public async Task<IEnumerable<Seats>> GetSeatsForFlightAsync(string flight_id)
+        public async Task<IEnumerable<Seats>> GetSeatsForFlightAsync(Guid flight_id)
         {
-            Guid flight_id_guid = new Guid(flight_id);
             var data = await _context.Seats
-                .Where(s => s.FlightId == flight_id_guid)
+                .Where(s => s.FlightId == flight_id)
                 .OrderBy(s => s.Row)
                 .ThenBy(s => s.Column)
                 .ToListAsync();
@@ -82,8 +81,10 @@ namespace FlightsReservationApp.Core.Repositories
         
         public async Task InsertNewTickets (List<Tickets> tickets)
         {
-            await _context.Tickets.AddRangeAsync(tickets);
-            _context.SaveChanges();
+            foreach (var t in tickets)
+            {
+                _context.Database.ExecuteSqlCommand("Insert into Tickets Values({0},{1},{2},{3})", t.Id, t.OrderId, t.SeatId, t.FlightId);
+            }
         } 
     }
 }

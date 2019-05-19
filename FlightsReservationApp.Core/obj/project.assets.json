@@ -12083,11 +12083,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\MCT\\S4\\BackEnd\\FlightsReservationApp.Core\\FlightsReservationApp.Core.csproj",
+      "projectUniqueName": "C:\\MCT\\S4\\deployTests\\BackendFlightsApp\\FlightsReservationApp.Core\\FlightsReservationApp.Core.csproj",
       "projectName": "FlightsReservationApp.Core",
-      "projectPath": "C:\\MCT\\S4\\BackEnd\\FlightsReservationApp.Core\\FlightsReservationApp.Core.csproj",
+      "projectPath": "C:\\MCT\\S4\\deployTests\\BackendFlightsApp\\FlightsReservationApp.Core\\FlightsReservationApp.Core.csproj",
       "packagesPath": "C:\\Users\\jaspe\\.nuget\\packages\\",
-      "outputPath": "C:\\MCT\\S4\\BackEnd\\FlightsReservationApp.Core\\obj\\",
+      "outputPath": "C:\\MCT\\S4\\deployTests\\BackendFlightsApp\\FlightsReservationApp.Core\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
